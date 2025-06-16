@@ -1,4 +1,4 @@
-import '../lib/password_manager.dart';
+import '../lib/main.dart';
 import 'package:test/test.dart';
 
 void main() {
