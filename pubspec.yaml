@@ -1,4 +1,4 @@
-name: password_manager
+name: cli_password_manager
 description: A terminal-based password manager.
 version: 1.0.0
 # repository: https://github.com/my_org/my_repo
