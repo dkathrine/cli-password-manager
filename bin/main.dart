@@ -9,9 +9,9 @@ Future<void> main() async {
   final vaultManager = VaultManager(encryptionService);
 
   // bool variable called exit, default value is false
-  bool exit = false;
+  bool shouldExit = false;
   // as long as exit is false the program will run
-  while (!exit) {
+  while (!shouldExit) {
     print('\x1B[1;35mWelcome to the CLI Password Manager!\x1B[0m');
 
     // Check if the vault file exists in the home directory
@@ -20,9 +20,10 @@ Future<void> main() async {
     print('\x1B[32m1. ✍️  Register\n\x1B[34m2. 🚪 Login\x1B[0m');
     final option = stdin.readLineSync();
 
+    // Prompt the user for a username
     print('Please enter your username:');
     final username = stdin.readLineSync() ?? '';
-
+    // if the username is empty, exit the program
     if (username.isEmpty) {
       print('❌ \x1B[31mUsername cannot be empty.\x1B[0m');
       return;
@@ -50,9 +51,13 @@ Future<void> main() async {
         print('❌ \x1B[31mInvalid option selected.\x1B[0m');
     }
 
+    // Display the main menu if register/login was successful
     if (success) {
-      // Display the main menu
-      exit = await vaultManager.menu();
+      shouldExit = await vaultManager.menu();
     }
+  }
+
+  if (shouldExit) {
+    exit(0);
   }
 }
