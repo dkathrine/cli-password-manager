@@ -27,3 +27,4 @@ doc/api/
 .flutter-plugins-dependencies
 CHANGELOG.md
 .DS_Store
+analysis_options.yaml
