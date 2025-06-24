@@ -14,9 +14,7 @@ Future<void> main() async {
   while (!shouldExit) {
     print('\x1B[1;35mWelcome to the CLI Password Manager!\x1B[0m');
 
-    // Check if the vault file exists in the home directory
-    // If it exists, load the vault; otherwise, create a new vault
-
+    // Prompt the user to Register or Login
     print('\x1B[32m1. ✍️  Register\n\x1B[34m2. 🚪 Login\x1B[0m');
     final option = stdin.readLineSync();
 
